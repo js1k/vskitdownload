@@ -2,7 +2,7 @@ export const locales = ['zh', 'en', 'fr', 'hi', 'ar', 'id', 'fil', 'es'] as cons
 
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = 'zh';
+export const defaultLocale: Locale = 'en';
 
 export type LocaleDirection = 'ltr' | 'rtl';
 
@@ -741,11 +741,15 @@ export function getLocaleMeta(locale: Locale): LocaleMeta {
     return localeMeta[locale];
 }
 
+export function getLocalePath(locale: Locale): string {
+    return locale === defaultLocale ? '/' : `/${locale}`;
+}
+
 export function getAlternateLanguageMap(): Record<string, string> {
     const result: Record<string, string> = {};
     for (const locale of locales) {
-        result[localeMeta[locale].hreflang] = `/${locale}`;
+        result[localeMeta[locale].hreflang] = getLocalePath(locale);
     }
-    result['x-default'] = `/${defaultLocale}`;
+    result['x-default'] = getLocalePath(defaultLocale);
     return result;
 }

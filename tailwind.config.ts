@@ -29,6 +29,25 @@ const config: Config = {
                 'brand-glow-strong': '0 16px 32px rgba(108, 99, 255, 0.36)',
                 'phone-center': '0 40px 80px rgba(108, 99, 255, 0.35), 0 0 0 1px rgba(108, 99, 255, 0.5)',
                 'phone-side': '0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(108, 99, 255, 0.2)'
+            },
+            keyframes: {
+                'float-center': {
+                    '0%, 100%': { transform: 'translateY(-12px) scale(1.06)' },
+                    '50%': { transform: 'translateY(-22px) scale(1.06)' }
+                },
+                'float-left': {
+                    '0%, 100%': { transform: 'perspective(1400px) rotateY(28deg) translateX(80px) translateY(0) scale(0.88)' },
+                    '50%': { transform: 'perspective(1400px) rotateY(28deg) translateX(80px) translateY(-14px) scale(0.88)' }
+                },
+                'float-right': {
+                    '0%, 100%': { transform: 'perspective(1400px) rotateY(-28deg) translateX(-80px) translateY(0) scale(0.88)' },
+                    '50%': { transform: 'perspective(1400px) rotateY(-28deg) translateX(-80px) translateY(-14px) scale(0.88)' }
+                }
+            },
+            animation: {
+                float: 'float-center 4s ease-in-out infinite',
+                'float-slow': 'float-left 5s ease-in-out infinite',
+                'float-slow-delay': 'float-right 5s ease-in-out 1s infinite'
             }
         }
     },

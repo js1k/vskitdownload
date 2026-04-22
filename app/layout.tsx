@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     },
     description: 'vskitOfficial download: Official VSKit APK download website with multilingual pages and real-time interface URL parsing.',
     alternates: {
-        canonical: '/zh'
+        canonical: '/'
     },
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: '/zh',
+        url: '/',
         title: 'VSKit Official Download | vskitOfficial download',
         description: 'Official VSKit APK download website for short drama users. Supports multilingual SEO landing pages.',
         siteName: 'VSKit Official Download',
